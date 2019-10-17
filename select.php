@@ -3,7 +3,7 @@ include('functions.php');
 $pdo = connectToDb();
 
 //データ表示SQL作成
-$sql = 'SELECT * FROM message';
+$sql = 'SELECT * FROM message ORDER BY time DESC';
 $stmt = $pdo->prepare($sql);
 $status = $stmt->execute();
 
@@ -57,9 +57,9 @@ if ($status == false) {
                     <li class="nav-item">
                         <a class="nav-link" href="index.php">入力</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="select.php">Chat履歴</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </nav>
